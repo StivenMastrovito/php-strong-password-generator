@@ -18,11 +18,9 @@ function generatePassword(int $length, bool $mixed){
         }; 
     }
     
-
     session_start();
     $_SESSION["password"][] = $password;
     header("Location: ./result.php");
-    return $password;
 }
 
 ?>

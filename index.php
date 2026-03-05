@@ -1,24 +1,17 @@
 <?php
 include './functions.php';
 
-$password = "";
+session_start();
 $_SESSION["password"] = [];
 
 
 if(isset($_GET['length_password']) && is_numeric($_GET['length_password']) && $_GET['length_password'] >= 6 && $_GET['length_password'] <= 20){
-    if(isset($_GET["mixed"]) && $_GET["mixed"] === "on")
-    {
-        $password = generatePassword($_GET['length_password'], true);
+    if(isset($_GET["mixed"]) && $_GET["mixed"] === "on"){
+       generatePassword($_GET['length_password'], true);
     }else{
-        $password = generatePassword($_GET['length_password'], false);        
+       generatePassword($_GET['length_password'], false);        
     }
 } 
-
-var_dump($password)
-
-
-
-
 
 ?>
 
